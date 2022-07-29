@@ -19,7 +19,7 @@ const MainThemePlayer = (
         <Sound
             url={MainTheme}
             playStatus={ isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
-            playFromPosition={300}
+            playFromPosition={0}
             onLoading={handleSongLoading}
             onPlaying={handleSongPlaying}
             onFinishedPlaying={handleSongFinishedPlaying}
