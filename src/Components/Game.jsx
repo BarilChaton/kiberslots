@@ -21,7 +21,7 @@ const Game = () => {
     const [ring3, setRing3] = useState()
     const [price, setPrice] = useState()
     const [currentBet, setCurrentBet] = useState(5)
-    const [bet, setBet] = useState()
+    const [bet, setBet] = useState(5)
     const [jackpot, setJackpot] = useState(0)
     const [balance, setBalance] = useState(1000)
 
@@ -232,7 +232,7 @@ const Game = () => {
                 setRing2()
                 setRing3()
                 setBalance(balance - currentBet)
-                setJackpot(jackpot + (currentBet))
+                setJackpot(currentBet)
                 setTimeout(function(){
                     rand()
                 }, 2000)
@@ -244,17 +244,17 @@ const Game = () => {
 
     function win() {
         if (ring1 <= 50 && ring2 <= 50 && ring3 <= 50 && ring1 !== undefined) {
-            setPrice(jackpot * 15)
-            setBalance(balance + (jackpot * 15))
+            setPrice(jackpot * 2)
+            setBalance(balance + price)
         } else if (ring1 > 50 && ring1 <= 75 && ring2 > 50 && ring2 <= 75 && ring3 > 50 && ring3 <= 75 && ring1 !== undefined) {
-            setPrice(jackpot * 20)
-            setBalance(balance + (jackpot * 20))
+            setPrice(jackpot * 3)
+            setBalance(balance + price)
         } else if (ring1 > 75 && ring1 <= 95 && ring2 > 75 && ring2 <= 95 && ring3 > 75 && ring3 <= 95 && ring1 !== undefined) {
-            setPrice(jackpot * 25)
-            setBalance(balance + (jackpot * 25))
+            setPrice(jackpot * 5)
+            setBalance(balance + price)
         } else if (ring1 > 95 && ring1 <= 100 && ring2 > 95 && ring2 <= 100 && ring3 > 95 && ring3 <= 100 && ring1 !== undefined) {
             setPrice(jackpot)
-            setBalance(balance + jackpot)
+            setBalance(balance + price)
             setJackpot(0)
         } else {
             setPrice(0)
@@ -324,11 +324,11 @@ const Game = () => {
                                 <div className='absolute left-10 top-5 shadow-xl shadow-gray-700'>
                                     <div className='p-3 rounded-md border-2 border-white bg-blue-500'>
                                         <div className='flex justify-between gap-2 items-center'>
-                                            <button className='text-white text-3xl' onClick={() => setCurrentBet(currentBet - 5)}>
+                                            <button className='text-white text-3xl' onClick={() => setCurrentBet(currentBet - bet)}>
                                                 <BsDashCircle/>
                                             </button>
                                             <h2 className='text-white text-xl font-bold'>Bet!</h2>
-                                            <button className='text-white text-3xl' onClick={() => setCurrentBet(currentBet + 5)}>
+                                            <button className='text-white text-3xl' onClick={() => setCurrentBet(currentBet + bet)}>
                                                 <BsPlusCircle/>
                                             </button>
                                             <div className='flex flex-col bg-pink-400 p-2 rounded-full border-2 border-white'>
