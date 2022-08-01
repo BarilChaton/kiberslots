@@ -261,6 +261,9 @@ const Game = () => {
         } 
     }
 
+    //Work on win messages here.
+    //https://github.com/MarsHeer/ReactJS-Slots-Machines/blob/master/src/App.js
+
     //Checks bet numbers
     //Uses react event because of onChange...
     function numChecker(e) {
