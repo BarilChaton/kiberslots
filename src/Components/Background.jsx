@@ -5,6 +5,7 @@ import { BsPlusCircle } from 'react-icons/bs'
 
 // importing the Game.js
 import Game from './Game';
+import {play} from './Game'
 
 import bg from '../Assets/Background.png'
 import kiber from '../Assets/Kiber.gif'
@@ -63,7 +64,7 @@ const background = () => {
                                 </button>
 
                                 {/* The spin button */}
-                                <button id='SpinButton' className='absolute rounded-full top-5 shadow-xl shadow-gray-700'>
+                                <button className='absolute rounded-full top-5 shadow-xl shadow-gray-700' onClick={() => Game(play)}>
                                     <div className='p-5 rounded-full border-2 border-white bg-blue-500'>
                                         <div className='items-center justify-center'>
                                             <div className='text-white text-3xl'>

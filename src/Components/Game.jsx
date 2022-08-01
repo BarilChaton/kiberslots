@@ -28,61 +28,61 @@ function row1() {
     if(!spin) {
         return (
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel h-[100px] leading-[100px] align-middle'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel h-[100px] leading-[100px] align-middle'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel h-[100px] leading-[100px] align-middle'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel h-[100px] leading-[100px] align-middle'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel h-[100px] leading-[100px] align-middle'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (spin && ring1 == undefined) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (ring1 >= 1 && ring1 <= 50 ) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (ring1 > 50 && ring1 <= 75) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (ring1 > 75 && ring1 <= 95) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (ring1 > 95 && ring1 <= 100) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     }
@@ -92,61 +92,61 @@ function row2() {
     if(!spin) {
         return (
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (spin && ring2 == undefined) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (ring2 >= 1 && ring2 <= 50 ) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (ring2 > 50 && ring2 <= 75) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (ring2 > 75 && ring2 <= 95) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (ring2 > 95 && ring2 <= 100) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     }
@@ -156,61 +156,61 @@ function row3() {
     if(!spin) {
         return (
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (spin && ring3 == undefined) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-spinningReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (ring3 >= 1 && ring3 <= 50 ) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (ring3 > 50 && ring3 <= 75) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (ring3 > 75 && ring3 <= 95) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     } else if (ring3 > 95 && ring3 <= 100) {
         return(
             <>
-            <div className='ringEnd'><img src={img1} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img2} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img3} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img4} alt='symbol' /></div>
-            <div className='ringEnd'><img src={img5} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img1} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img2} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img3} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img4} alt='symbol' /></div>
+            <div className='animate-stopReel'><img src={img5} alt='symbol' /></div>
             </>
         )
     }
@@ -238,6 +238,7 @@ function rand() {
 
 
 function play() {
+    console.log('play')
     if (ring3 > 1 || !spin) {
         if (input <= bet && input >= 1) {
             setBet(input)
@@ -275,3 +276,4 @@ function win() {
 }
 
 export default Game
+export function play() {}

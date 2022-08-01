@@ -9,9 +9,20 @@ module.exports = {
         '3xl': '0 0 30px 30px rgba(0, 0, 0, 0.3)',
       },
       keyframes: {
-        spin: {
-            transform: 'rotate(360deg)'
-          }
+        goaround: {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(-1000px)' }
+        },
+        stop: {
+          '0%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-90px)' },
+          '75%': { transform: 'translateY(-80px)' },
+          '100%': { transform: 'translateY(-85px)' }
+        },
+      },
+      animation: {
+        'spinningReel': 'goaround 0.2s linear infinite',
+        'stopReel': 'stop .5s ease-out forwards'
       }
     },
   },
