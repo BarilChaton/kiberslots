@@ -3,11 +3,15 @@ import MusicPlayer from './MainThemePlayer'
 import { GiReturnArrow } from 'react-icons/gi'
 import { BsPlusCircle } from 'react-icons/bs'
 
+// importing the Game.js
+import Game from './Game';
+
 import bg from '../Assets/Background.png'
 import kiber from '../Assets/Kiber.gif'
 import pig from '../Assets/pig.gif'
 
 const background = () => {
+
   return (
     <div className='flex h-screen w-screen justify-start'>
         <div className='absolute flex flex-row'>
@@ -16,11 +20,17 @@ const background = () => {
             {/* This is the reel area, reels and effects are in seperate module. */}
             {/* Also here is the layout for the ui. */}
             <div className='absolute flex w-screen h-screen justify-center'>
+                <div className='absolute ml-12 mt-[22.20em] w-[700px] h-[500px] animate-pulse shadow-3xl shadow-white rounded-2xl'></div>
                 <div className='flex justify-center items-center'>
-                    <div className='relative ml-12 mt-[17em] w-[700px] h-[500px] bg-black bg-opacity-60 border-4 border-pink-400 z-10 rounded-2xl'>
-                        
+                    <div className='relative overflow-hidden ml-12 mt-[17em] w-[700px] h-[500px] bg-black bg-opacity-60 border-4 border-pink-400 z-10 rounded-2xl'>
+                        <div className=' justify-center'>
+                            <div className='absolute w-[700px] justify-center items-center'>
+                                <Game />
+                            </div>
+                        </div>
+
                         {/* Glow effect around the game viewport. Really just uses a pulsating shadow. Which is modified */}
-                        <div className='flex h-full animate-pulse shadow-3xl shadow-white rounded-2xl'></div>
+                        
                         <div className='absolute top-0'>
                             
                             {/* Game header */}
@@ -38,7 +48,7 @@ const background = () => {
                             <div className='relative flex flex-col w-[692px] h-[8em] justify-between items-center pt-4 border-t-4 border-white rounded-b-xl bg-pink-300'>
                                 
                                 {/* The add bet button */}
-                                <button className='absolute left-10 top-5 shadow-xl shadow-gray-700'>
+                                <button id='addBet' className='absolute left-10 top-5 shadow-xl shadow-gray-700'>
                                     <div className='p-3 rounded-md border-2 border-white bg-blue-500'>
                                         <div className='flex justify-between gap-2 items-center'>
                                             <h2 className='text-white text-xl font-bold'>Add bet!</h2>
@@ -53,7 +63,7 @@ const background = () => {
                                 </button>
 
                                 {/* The spin button */}
-                                <button className='absolute rounded-full top-5 shadow-xl shadow-gray-700'>
+                                <button id='SpinButton' className='absolute rounded-full top-5 shadow-xl shadow-gray-700'>
                                     <div className='p-5 rounded-full border-2 border-white bg-blue-500'>
                                         <div className='items-center justify-center'>
                                             <div className='text-white text-3xl'>
