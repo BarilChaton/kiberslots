@@ -21,8 +21,11 @@ module.exports = {
         },
       },
       animation: {
-        'spinningReel': 'goaround .04s linear infinite',
-        'stopReel': 'stop .3s ease-out forwards'
+        'spinningReel': 'goaround .07s linear infinite',
+        'stopReel': 'stop .4s ease-out forwards'
+      },
+      fontFamily: {
+        pixelBug: ["Pixel Bug", "sans-serif"]
       }
     },
   },

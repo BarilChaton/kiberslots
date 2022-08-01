@@ -1,9 +1,9 @@
-import Background from './Components/Background'
+import Game from './Components/Game'
 
 function App() {
   return (
     <div className="App">
-      <Background />
+      <Game />
     </div>
   );
 }
