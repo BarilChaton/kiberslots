@@ -11,7 +11,7 @@ module.exports = {
       keyframes: {
         goaround: {
           '0%': { transform: 'translateY(0)' },
-          '100%': { transform: 'translateY(-1000px)' }
+          '100%': { transform: 'translateY(-100px)' }
         },
         stop: {
           '0%': { transform: 'translateY(0)' },
@@ -21,8 +21,8 @@ module.exports = {
         },
       },
       animation: {
-        'spinningReel': 'goaround 0.2s linear infinite',
-        'stopReel': 'stop .5s ease-out forwards'
+        'spinningReel': 'goaround 0.08s linear infinite',
+        'stopReel': 'stop .3s ease-out forwards'
       }
     },
   },
