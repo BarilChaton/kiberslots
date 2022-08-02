@@ -224,10 +224,10 @@ const Game = () => {
         if (ring3 > 1 || !spin) {
             if (currentBet <= balance && currentBet >= 1) { //If there is no balance the reels won't spin.
                 setBet(bet) //Used setBet to currentBet but that made it so the player would not be able to add or subtract 5kr to bet.
-                setSpin(true)
-                setRing1()
-                setRing2()
-                setRing3()
+                setSpin(true) //Bool for kicking off the spin
+                setRing1() //Kicks off the reels
+                setRing2() //Kicks off the reels
+                setRing3() //Kicks off the reels
                 setBalance(balance + price - currentBet) //Adds the won price to balance and then subtracts the bet, if there is no winning then it goes like 1000 + 0 - 5. 
                 setJackpot(currentBet) //For calculating winnings.
                 setTimeout(function(){
