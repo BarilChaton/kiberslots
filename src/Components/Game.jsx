@@ -1,14 +1,14 @@
-import React, { useState, useEffect, Component } from 'react'
-import MusicPlayer from './MainThemePlayer'
+import React, { useState, useEffect } from 'react'
 import { GiReturnArrow } from 'react-icons/gi'
 import { BsPlusCircle, BsDashCircle } from 'react-icons/bs'
 
 
-// Art assets.
-import img1 from '../Assets/Reel/1.png';
-import img2 from '../Assets/Reel/2.png';
-import img3 from '../Assets/Reel/3.png';
-import img4 from '../Assets/Reel/4.png';
+// importing all the art assets.
+import RelaxLogo from '../Assets/relax_logo.png'
+import img1 from '../Assets/Reel/1.png'
+import img2 from '../Assets/Reel/2.png'
+import img3 from '../Assets/Reel/3.png'
+import img4 from '../Assets/Reel/4.png'
 import bg from '../Assets/Background.png'
 import kiber from '../Assets/Kiber.gif'
 import pig from '../Assets/pig.gif'
@@ -16,7 +16,7 @@ import pig from '../Assets/pig.gif'
 const Game = () => {
 
     //
-    // The code.
+    // The entire code.
     //
 
     const [spin, setSpin] = useState(false)
@@ -33,11 +33,11 @@ const Game = () => {
         win()
       }, [ring3])
 
-      //The row functions checks the animation and rearanges the symbols to give the illusion of the reel spinning.
+      //The reel functions checks the animation and rearanges the symbols to give the illusion of the reel spinning.
       //In reality they move up and down really fast, too fast for the player to notice it.
       //Each new position the reel is in it rearanges the symbols.
 
-      function row1() {
+    function reel1() {
         if(!spin) {
             return (
                 <>
@@ -95,7 +95,7 @@ const Game = () => {
         }
     }
     
-    function row2() {
+    function reel2() {
         if(!spin) {
             return (
                 <>
@@ -153,7 +153,7 @@ const Game = () => {
         }
     }
     
-    function row3() {
+    function reel3() {
         if(!spin) {
             return (
                 <>
@@ -210,67 +210,31 @@ const Game = () => {
             )
         }
     }
-
-    //This win function sets the state of price for signaling the message box.
-    //So the user can get feedback on the gameplay.
-    //It essentially shows the calculation.
-
-    // function win() {
-    //     if(ring1 <= 50 && ring2 <= 50 && ring3 <= 50 && ring1 !== undefined) {
-    //         setPrice(1)
-    //     } else if (ring1 > 50 && ring1 <= 75 && ring2 > 95 && ring2 <= 100 && ring3 > 50 && ring3 <= 75 && ring1 !== undefined) {
-    //         setPrice(2)
-    //     } else if (ring1 > 75 && ring1 <= 95 && ring2 > 75 && ring2 <= 95 && ring3 > 75 && ring3 <= 95 && ring1 !== undefined) {
-    //         setPrice(3)
-    //     } else if (ring1 > 95 && ring1 <= 100 && ring2 > 95 && ring2 <= 100 && ring3 > 95 && ring3 <= 100 && ring1 !== undefined) {
-    //         setPrice(4)
-    //     } else if (ring1 <= 50 && ring2 <= 50 && ring1 !== undefined) {
-    //         setPrice(5)
-    //     } else if (ring2 <= 50 && ring3 <= 50 && ring1 !== undefined) {
-    //         setPrice(6)
-    //     } else if (ring1 > 50 && ring1 <= 75 && ring2 > 50 && ring2 <= 75 && ring1 !== undefined) {
-    //         setPrice(7)
-    //     } else if (ring2 > 50 && ring2 <= 75 && ring3 > 50 && ring3 <= 75 && ring1 !== undefined) {
-    //         setPrice(8)
-    //     } else if (ring1 > 75 && ring1 <= 95 && ring2 > 75 && ring2 <= 95 && ring1 !== undefined) {
-    //         setPrice(9)
-    //     } else if (ring2 > 75 && ring2 <= 95 && ring3 > 75 && ring3 <= 95 && ring1 !== undefined) {
-    //         setPrice(10)
-    //     } else if (ring1 > 95 && ring1 <= 100 && ring2 > 95 && ring2 <= 100 && ring1 !== undefined) {
-    //         setPrice(11)
-    //     } else if (ring2 > 95 && ring2 <= 100 && ring3 > 95 && ring3 <= 100 && ring1 !== undefined) {
-    //         setPrice(12)
-    //     } else {
-    //         setPrice(0)
-    //     }
-    // }
-
+    
     //Randomizes the end position of the symbols.
     //Even though it is not in the reel spinning function it is not noticable that it skips rearangement.
-
-    function rand() {
+    function randomness() {
         setRing1(Math.floor(Math.random() * (100 - 1) + 1))
         setTimeout(function(){setRing2(Math.floor(Math.random() * (100 - 1) + 1))}, 1000)
         setTimeout(function(){setRing3(Math.floor(Math.random() * (100 - 1) + 1))}, 2000)
     }
 
     //This function triggers when the player hits the spin button.
-
     function play() {
         if (ring3 > 1 || !spin) {
-            if (currentBet <= balance && currentBet >= 1) {
-                setBet(currentBet)
+            if (currentBet <= balance && currentBet >= 1) { //If there is no balance the reels won't spin.
+                setBet(bet) //Used setBet to currentBet but that made it so the player would not be able to add or subtract 5kr to bet.
                 setSpin(true)
                 setRing1()
                 setRing2()
                 setRing3()
-                setBalance(balance + price - currentBet)
-                setJackpot(currentBet)
+                setBalance(balance + price - currentBet) //Adds the won price to balance and then subtracts the bet, if there is no winning then it goes like 1000 + 0 - 5. 
+                setJackpot(currentBet) //For calculating winnings.
                 setTimeout(function(){
-                    rand()
-                }, 2000)
+                    randomness()
+                }, 2000) //Random symbol setup at the end of spin.
             } else {
-                setPrice(0)
+                setPrice(0) //If nothing happens. Then nothing happens. ¯\_(ツ)_/¯
             }
         }
     }
@@ -279,54 +243,39 @@ const Game = () => {
     //For some reason it seemed that the price was not adding to the balance so I had to force it in the play function.
     //Now it works as intended.
     function win() {
-        if (ring1 <= 50 && ring2 <= 50 && ring3 <= 50 && ring1 !== undefined) {
-            setPrice(jackpot * 5)
-            setBalance(balance + price)
+        if (ring1 <= 50 && ring2 <= 50 && ring3 <= 50 && ring1 !== undefined) { //Numbers are working kind of like both position and id for each symbol. They define the rings so the game knows when the player has won.
+            setPrice(jackpot * 5)                                               //The numbers also defines the value of the symbols if they happen to be placed in a row. And calculates the price accordingly.
         } else if (ring1 > 50 && ring1 <= 75 && ring2 > 50 && ring2 <= 75 && ring3 > 50 && ring3 <= 75 && ring1 !== undefined) {
             setPrice(jackpot * 10)
-            setBalance(balance + price)
         } else if (ring1 > 75 && ring1 <= 95 && ring2 > 75 && ring2 <= 95 && ring3 > 75 && ring3 <= 95 && ring1 !== undefined) {
             setPrice(jackpot * 15)
-            setBalance(balance + price)
         } else if (ring1 > 95 && ring1 <= 100 && ring2 > 95 && ring2 <= 100 && ring3 > 95 && ring3 <= 100 && ring1 !== undefined) {
             setPrice(jackpot)
-            setBalance(balance + price)
             setJackpot(0)
         } else if (ring1 <= 50 && ring2 <= 50 && ring1 !== undefined) {
             setPrice(jackpot * 2)
-            setBalance(balance + price)
         } else if (ring2 <= 50 && ring3 <= 50 && ring1 !== undefined) {
             setPrice(jackpot * 2)
-            setBalance(balance + price)
         } else if (ring1 > 50 && ring1 <= 75 && ring2 > 50 && ring2 <= 75 && ring1 !== undefined) {
             setPrice(jackpot * 3)
-            setBalance(balance + price)
         } else if (ring2 > 50 && ring2 <= 75 && ring3 > 50 && ring3 <= 75 && ring1 !== undefined) {
             setPrice(jackpot * 3)
-            setBalance(balance + price)
         } else if (ring1 > 75 && ring1 <= 95 && ring2 > 75 && ring2 <= 95 && ring1 !== undefined) {
             setPrice(jackpot * 4)
-            setBalance(balance + price)
         } else if (ring2 > 75 && ring2 <= 95 && ring3 > 75 && ring3 <= 95 && ring1 !== undefined) {
             setPrice(jackpot * 4)
-            setBalance(balance + price)
         } else if (ring1 > 95 && ring1 <= 100 && ring2 > 95 && ring2 <= 100 && ring1 !== undefined) {
             setPrice(jackpot)
-            setBalance(balance + price)
             setJackpot(0)
         } else if (ring2 > 95 && ring2 <= 100 && ring3 > 95 && ring3 <= 100 && ring1 !== undefined) {
             setPrice(jackpot)
-            setBalance(balance + price)
             setJackpot(0)
         } else {
             setPrice(0)
         }
     }
 
-    //Work on win messages here.
-    //https://github.com/MarsHeer/ReactJS-Slots-Machines/blob/master/src/App.js
-
-    //Checks bet numbers
+    //Checks bet numbers and prevents from spinning if bet value is below 0. It still shows though.
     //Uses react event because of onChange...
     function numChecker(e) {
         const value = e.target.value;
@@ -350,8 +299,15 @@ const Game = () => {
             {/* This is the general game area */}
             <div className='absolute flex w-screen h-screen justify-center'>
 
+                <div className='absolute top-5 left-[790px] bg-black border-4 border-white p-4 rounded-xl'>
+                    <img src={RelaxLogo} alt="relax-logo" />
+                    <div className='flex mt-4 w-auto justify-center'>
+                        <p className='text-white text-lg text-center font-bold'>by: Christian Karlsson Korbacz</p>
+                    </div>
+                </div>
+
                 {/* Here is the current player balance */}
-                <div className='absolute left-60 ml-[5.2em] bottom-40 bg-pink-300 p-4 rounded-xl border-4 border-pink-400'>
+                <div className='absolute left-[700px] right-[700px] ml-[3em] text-center bottom-14 bg-pink-300 p-4 rounded-xl border-4 border-pink-400'>
                     <h1 className='text-white text-3xl font-bold animate-bounce'>{"Balance: " + balance + " :-"}</h1>
                 </div>
                 {/* The reel container as well as other ui stuff */}
@@ -362,13 +318,13 @@ const Game = () => {
                                 <div class='Reels' className='flex flex-3 justify-between mr-2'>
                                     {/* The reels */}
                                     <div className='border-x-8 border-blue-300'>
-                                        {row1()}
+                                        {reel1()}
                                     </div>
                                     <div className='border-x-8 border-blue-300'>
-                                        {row2()}
+                                        {reel2()}
                                     </div>
                                     <div className='border-x-8 border-blue-300'>
-                                        {row3()}
+                                        {reel3()}
                                     </div>
                                 </div>
                             </div>
@@ -435,14 +391,7 @@ const Game = () => {
                 </div>
             </div>
         </div>
-        {/* Music player that is bugged. Considering on removing it. */}
-        <div className='absolute flex flex-col'>
-            <div className='flex justify-center text-center bg-pink-400 p-1 m-3 w-25 h-25 rounded-full border-2 border-white'>
-                <MusicPlayer />
-            </div>
-        </div>
     </div>
-    
   )
 }
 
