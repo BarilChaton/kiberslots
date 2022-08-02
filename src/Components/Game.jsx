@@ -302,7 +302,7 @@ const Game = () => {
                 <div className='absolute top-5 left-[790px] bg-black border-4 border-white p-4 rounded-xl'>
                     <img src={RelaxLogo} alt="relax-logo" />
                     <div className='flex mt-4 w-auto justify-center'>
-                        <p className='text-white text-lg text-center font-bold'>by: Christian Karlsson Korbacz</p>
+                        <p className='text-white text-lg text-center font-bold'>A code test for: Christian Karlsson Korbacz</p>
                     </div>
                 </div>
 
