@@ -15,6 +15,10 @@ import pig from '../Assets/pig.gif'
 
 const Game = () => {
 
+    //
+    // The code.
+    //
+
     const [spin, setSpin] = useState(false)
     const [ring1, setRing1] = useState()
     const [ring2, setRing2] = useState()
@@ -28,6 +32,10 @@ const Game = () => {
     useEffect(() => {
         win()
       }, [ring3])
+
+      //The row functions checks the animation and rearanges the symbols to give the illusion of the reel spinning.
+      //In reality they move up and down really fast, too fast for the player to notice it.
+      //Each new position the reel is in it rearanges the symbols.
 
       function row1() {
         if(!spin) {
@@ -203,6 +211,10 @@ const Game = () => {
         }
     }
 
+    //This win function sets the state of price for signaling the message box.
+    //So the user can get feedback on the gameplay.
+    //It essentially shows the calculation.
+
     function win() {
         if(ring1 <= 50 && ring2 <= 50 && ring3 <= 50 && ring1 !== undefined) {
             setPrice(1)
@@ -217,11 +229,16 @@ const Game = () => {
         }
     }
 
+    //Randomizes the end position of the symbols.
+    //Even though it is not in the reel spinning function it is not noticable that it skips rearangement.
+
     function rand() {
         setRing1(Math.floor(Math.random() * (100 - 1) + 1))
         setTimeout(function(){setRing2(Math.floor(Math.random() * (100 - 1) + 1))}, 1000)
         setTimeout(function(){setRing3(Math.floor(Math.random() * (100 - 1) + 1))}, 2000)
     }
+
+    //This function triggers when the player hits the spin button.
 
     function play() {
         if (ring3 > 1 || !spin) {
@@ -241,6 +258,8 @@ const Game = () => {
             }
         }
     }
+
+    //This calculates the price with the bets. And the symbols value.
 
     function win() {
         if (ring1 <= 50 && ring2 <= 50 && ring3 <= 50 && ring1 !== undefined) {
@@ -274,7 +293,11 @@ const Game = () => {
         }
     }
 
-    
+    //////////////////////////////////////////////////////////////////////////////
+
+    //
+    // The Html, TailwindCSS
+    //
 
   return (
     <div className='flex h-screen w-screen justify-start'>
