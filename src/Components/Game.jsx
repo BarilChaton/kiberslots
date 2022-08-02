@@ -215,19 +215,35 @@ const Game = () => {
     //So the user can get feedback on the gameplay.
     //It essentially shows the calculation.
 
-    function win() {
-        if(ring1 <= 50 && ring2 <= 50 && ring3 <= 50 && ring1 !== undefined) {
-            setPrice(1)
-        } else if (ring1 > 50 && ring1 <= 75 && ring2 > 95 && ring2 <= 100 && ring3 > 50 && ring3 <= 75 && ring1 !== undefined) {
-            setPrice(2)
-        } else if (ring1 > 75 && ring1 <= 95 && ring2 > 75 && ring2 <= 95 && ring3 > 75 && ring3 <= 95 && ring1 !== undefined) {
-            setPrice(3)
-        } else if (ring1 > 95 && ring1 <= 100 && ring2 > 95 && ring2 <= 100 && ring3 > 95 && ring3 <= 100 && ring1 !== undefined) {
-            setPrice(4)
-        } else {
-            setPrice(0)
-        }
-    }
+    // function win() {
+    //     if(ring1 <= 50 && ring2 <= 50 && ring3 <= 50 && ring1 !== undefined) {
+    //         setPrice(1)
+    //     } else if (ring1 > 50 && ring1 <= 75 && ring2 > 95 && ring2 <= 100 && ring3 > 50 && ring3 <= 75 && ring1 !== undefined) {
+    //         setPrice(2)
+    //     } else if (ring1 > 75 && ring1 <= 95 && ring2 > 75 && ring2 <= 95 && ring3 > 75 && ring3 <= 95 && ring1 !== undefined) {
+    //         setPrice(3)
+    //     } else if (ring1 > 95 && ring1 <= 100 && ring2 > 95 && ring2 <= 100 && ring3 > 95 && ring3 <= 100 && ring1 !== undefined) {
+    //         setPrice(4)
+    //     } else if (ring1 <= 50 && ring2 <= 50 && ring1 !== undefined) {
+    //         setPrice(5)
+    //     } else if (ring2 <= 50 && ring3 <= 50 && ring1 !== undefined) {
+    //         setPrice(6)
+    //     } else if (ring1 > 50 && ring1 <= 75 && ring2 > 50 && ring2 <= 75 && ring1 !== undefined) {
+    //         setPrice(7)
+    //     } else if (ring2 > 50 && ring2 <= 75 && ring3 > 50 && ring3 <= 75 && ring1 !== undefined) {
+    //         setPrice(8)
+    //     } else if (ring1 > 75 && ring1 <= 95 && ring2 > 75 && ring2 <= 95 && ring1 !== undefined) {
+    //         setPrice(9)
+    //     } else if (ring2 > 75 && ring2 <= 95 && ring3 > 75 && ring3 <= 95 && ring1 !== undefined) {
+    //         setPrice(10)
+    //     } else if (ring1 > 95 && ring1 <= 100 && ring2 > 95 && ring2 <= 100 && ring1 !== undefined) {
+    //         setPrice(11)
+    //     } else if (ring2 > 95 && ring2 <= 100 && ring3 > 95 && ring3 <= 100 && ring1 !== undefined) {
+    //         setPrice(12)
+    //     } else {
+    //         setPrice(0)
+    //     }
+    // }
 
     //Randomizes the end position of the symbols.
     //Even though it is not in the reel spinning function it is not noticable that it skips rearangement.
@@ -248,7 +264,7 @@ const Game = () => {
                 setRing1()
                 setRing2()
                 setRing3()
-                setBalance(balance - currentBet)
+                setBalance(balance + price - currentBet)
                 setJackpot(currentBet)
                 setTimeout(function(){
                     rand()
@@ -260,24 +276,51 @@ const Game = () => {
     }
 
     //This calculates the price with the bets. And the symbols value.
-
+    //For some reason it seemed that the price was not adding to the balance so I had to force it in the play function.
+    //Now it works as intended.
     function win() {
         if (ring1 <= 50 && ring2 <= 50 && ring3 <= 50 && ring1 !== undefined) {
-            setPrice(jackpot * 2)
+            setPrice(jackpot * 5)
             setBalance(balance + price)
         } else if (ring1 > 50 && ring1 <= 75 && ring2 > 50 && ring2 <= 75 && ring3 > 50 && ring3 <= 75 && ring1 !== undefined) {
-            setPrice(jackpot * 3)
+            setPrice(jackpot * 10)
             setBalance(balance + price)
         } else if (ring1 > 75 && ring1 <= 95 && ring2 > 75 && ring2 <= 95 && ring3 > 75 && ring3 <= 95 && ring1 !== undefined) {
-            setPrice(jackpot * 5)
+            setPrice(jackpot * 15)
             setBalance(balance + price)
         } else if (ring1 > 95 && ring1 <= 100 && ring2 > 95 && ring2 <= 100 && ring3 > 95 && ring3 <= 100 && ring1 !== undefined) {
             setPrice(jackpot)
             setBalance(balance + price)
             setJackpot(0)
+        } else if (ring1 <= 50 && ring2 <= 50 && ring1 !== undefined) {
+            setPrice(jackpot * 2)
+            setBalance(balance + price)
+        } else if (ring2 <= 50 && ring3 <= 50 && ring1 !== undefined) {
+            setPrice(jackpot * 2)
+            setBalance(balance + price)
+        } else if (ring1 > 50 && ring1 <= 75 && ring2 > 50 && ring2 <= 75 && ring1 !== undefined) {
+            setPrice(jackpot * 3)
+            setBalance(balance + price)
+        } else if (ring2 > 50 && ring2 <= 75 && ring3 > 50 && ring3 <= 75 && ring1 !== undefined) {
+            setPrice(jackpot * 3)
+            setBalance(balance + price)
+        } else if (ring1 > 75 && ring1 <= 95 && ring2 > 75 && ring2 <= 95 && ring1 !== undefined) {
+            setPrice(jackpot * 4)
+            setBalance(balance + price)
+        } else if (ring2 > 75 && ring2 <= 95 && ring3 > 75 && ring3 <= 95 && ring1 !== undefined) {
+            setPrice(jackpot * 4)
+            setBalance(balance + price)
+        } else if (ring1 > 95 && ring1 <= 100 && ring2 > 95 && ring2 <= 100 && ring1 !== undefined) {
+            setPrice(jackpot)
+            setBalance(balance + price)
+            setJackpot(0)
+        } else if (ring2 > 95 && ring2 <= 100 && ring3 > 95 && ring3 <= 100 && ring1 !== undefined) {
+            setPrice(jackpot)
+            setBalance(balance + price)
+            setJackpot(0)
         } else {
             setPrice(0)
-        } 
+        }
     }
 
     //Work on win messages here.
