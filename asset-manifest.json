@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kiberslots/static/css/main.1db396cf.css",
+    "main.js": "/kiberslots/static/js/main.3167480f.js",
+    "static/media/Background.png": "/kiberslots/static/media/Background.4fb6e46c07377e72480c.png",
+    "static/media/Pixel Bug.otf": "/kiberslots/static/media/Pixel Bug.4022a26d8db5bac5c4e6.otf",
+    "index.html": "/kiberslots/index.html",
+    "main.1db396cf.css.map": "/kiberslots/static/css/main.1db396cf.css.map",
+    "main.3167480f.js.map": "/kiberslots/static/js/main.3167480f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1db396cf.css",
+    "static/js/main.3167480f.js"
+  ]
+}
